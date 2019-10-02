@@ -7,10 +7,6 @@ def new
   @quote = Quote.new
 end
 
-
-
-  private
-
 def create
    Quote.create(quote_params)
   if @quote.invalid?
@@ -18,6 +14,10 @@ def create
   end
   redirect_to root_path
   end
+
+  private
+
+
   
   def quote_params
     params.require(:quote).permit(:saying, :author)
