@@ -15,20 +15,22 @@
         <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
           <br />
-          PLACEHOLDER
+          ACTUAL
           <br />
-          TEXT
+          MEANINGLESS
           <br />
-          HERE
+          QUOTES
           <br />
         </div>
         <% end %>
       </div>
-      <div class="col-4 slogan">
-        Placeholder text
+      <div class="col col-sm-4 hidden-xs-down slogan">
+        Didn't know the quotes I entered as a joke would be permanent? Shame.
       </div>
-      <div class="col-5 links">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
+        <!-- button trigger modal -->
        <%= link_to 'Contribute','#', data: {toggle: 'modal', target: '#myModal'}%>
+       &nbsp;&nbsp;
         <%= link_to 'About', about_path %>
       </div>
     </header>
@@ -46,14 +48,14 @@
           </div>
            <%= simple_form_for Quote.new do |f| %>
           <div class="modal-body">
-            <%= f.input :saying %>
-          <%= f.input :author %>
+            <%= f.input :saying, label: "What is the saying you want to add?", placeholder: "Fear is the disease. Hustle is the antidote." %>
+            <br />
+          <%= f.input :author, label: "Who is the author of the quote?", placeholder: "Travis Kalanick" %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <%= f.submit 'Create', class: 'btn btn-danger' %>
         </div>
-
            <% end %>
         </div>
       </div>
@@ -74,12 +76,12 @@
   <div class='footer'>
     <div class="container">
       <div class="row">
-        <div class="col-6">
-          <%=link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
+        <div class="col-12 col-sm-6">
+          <%=link_to "This isn't enough, I need more!", root_path, class: 'next-quote' %>
         </div>
-        <div class="col-6 footer-blurb">
+        <div class="col-12 col-sm-6 footer-blurb">
           assembled by <a href="[YOUR_PORTFOLIO_URL]">[Caitlin]</a><br />
-          Want to build your own Splurty Web App - <a href ="https://online.bootcampspot.com">Learn how to code here</a>
+          Want to build your own Splurty Web App - <a href ="https://online.bootcampspot.com">Learn how to code here!</a>
         </div>
       </div>
     </div>
